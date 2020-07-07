@@ -1,6 +1,7 @@
 import pandas as pd
 import glob, os, json
 import matplotlib.pyplot as plt
+import mpld3
 
 df = pd.DataFrame()
 path_to_json = 'json/'
@@ -11,5 +12,9 @@ for file in file_list:
     data = pd.read_json(file, lines=True)
     df = df.append(data)
 
-df.plot(x='date', y='total', kind = 'line')
-plt.show()
+fig = df.plot(x='date', y='total', kind = 'line').get_figure()
+
+html_str = mpld3.fig_to_html(fig)
+html_file = open("index.html","w")
+html_file.write(html_str)
+html_file.close()
