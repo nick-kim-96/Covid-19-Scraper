@@ -12,7 +12,12 @@ for file in file_list:
     data = pd.read_json(file, lines=True)
     df = df.append(data)
 
-fig = df.plot(x='date', y='total', kind = 'line').get_figure()
+ax = df.plot(x='date', y='total',title ='Covid-19 Cases in California', kind = 'line')
+ax.set_xlabel("Time")
+ax.set_ylabel("Cases")
+
+
+fig = ax.get_figure()
 
 html_str = mpld3.fig_to_html(fig)
 html_file = open("index.html","w")

@@ -17,7 +17,7 @@ pip3 install matplotlib
 ```
 
 ## Tools
-Markup : * Python3
+* Python3
 * AWS Lambda
 * AWS S3 Bucket
 * AWS Identity and Access Management

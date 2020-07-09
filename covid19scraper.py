@@ -18,16 +18,22 @@ def scrapeGlobalCase ():
 
         print(data[3][1].contents[0].replace(',', ''))
 
+        cities = []
+        cases = []
         i = 2
         total = 0
         while i < len(data) - 5:
             total += int(data[i][1].contents[0].replace(',', ''))
+            cities.append(str(data[i][0].contents[0].replace(',', '')).strip('\n'))
+            cases.append(int(data[i][1].contents[0].replace(',', '')))
             i+=1
-        TimeNow = datetime.datetime.now()
+        TimeNow = datetime.datetime.now() 
+
         return {
             'date': str(TimeNow),
-            'total': str(total)
+            'total': str(total),
+            'cities': cities,
+            'cases': cases,
         }
         
-     
     except Exception as e: print(e)
