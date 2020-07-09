@@ -16,8 +16,6 @@ def scrapeGlobalCase ():
             cols = row.find_all('td')
             data.append(cols)
 
-        print(data[3][1].contents[0].replace(',', ''))
-
         cities = []
         cases = []
         i = 2

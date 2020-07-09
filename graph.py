@@ -4,13 +4,14 @@ import matplotlib.pyplot as plt
 import mpld3
 
 df = pd.DataFrame()
+df2 = pd.DataFrame()
 path_to_json = 'json/'
 json_pattern = os.path.join(path_to_json, '*.json')
 file_list = glob.glob(json_pattern)
 
 for file in file_list:
     data = pd.read_json(file, lines=True)
-    df = df.append(data)
+    df = df.append({'date': data['date'], 'total': int(data['total'])}, ignore_index=True)
 
 ax = df.plot(x='date', y='total',title ='Covid-19 Cases in California', kind = 'line')
 ax.set_xlabel("Time")
