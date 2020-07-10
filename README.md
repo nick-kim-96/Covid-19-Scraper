@@ -16,7 +16,7 @@ pip3 install mpld3
 pip3 install matplotlib
 ```
 
-##Example
+## Example
 ![Screenshot](graph.png)
 
 ## Tools
@@ -26,7 +26,7 @@ pip3 install matplotlib
 * AWS Identity and Access Management
 * AWS CloudWatch
 
-##Project Status
+## Project Status
 Ongoing
 
 
