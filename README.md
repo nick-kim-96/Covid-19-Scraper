@@ -16,10 +16,18 @@ pip3 install mpld3
 pip3 install matplotlib
 ```
 
+##Example
+![Screenshot](graph.png)
+
 ## Tools
 * Python3
 * AWS Lambda
 * AWS S3 Bucket
 * AWS Identity and Access Management
 * AWS CloudWatch
+
+##Project Status
+Ongoing
+
+
 
