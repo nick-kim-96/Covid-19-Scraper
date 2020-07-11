@@ -36,6 +36,7 @@ fig = plt.figure(1)
 fig2 = plt.figure(2)
 
 #plt.show()
+fig2.savefig("graph.png")
 
 
 html_str = mpld3.fig_to_html(fig2)
