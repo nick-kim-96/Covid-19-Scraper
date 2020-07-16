@@ -11,9 +11,9 @@ file_list = glob.glob(json_pattern)
 
 
 
-for file in file_list:
+for file in sorted(file_list):
     data = pd.read_json(file, lines=True)
-    df = df.append({'date': data['date'], 'total': int(data['total'])}, ignore_index=True)
+    df = df.append({'date': list(data['date']), 'total': int(data['total'])}, ignore_index=True)
     df1['City'] = list(data['cities'][0])
 
     newList = data['cases']
@@ -28,6 +28,10 @@ ax1.set_ylabel("Cases")
 ax1.set_xticks(ax1.get_xticks()[::1])
 
 
+df['date'] = str(df['date'][0])
+df['date'] =  df['date'].str.slice(11,22)
+pd.set_option('display.width', 200)
+print(df['date'])
 ax = df.plot(x='date', y='total',title ='Covid-19 Cases in California', kind = 'line')
 ax.set_xlabel("Time")
 ax.set_ylabel("Cases")
@@ -35,8 +39,9 @@ ax.set_ylabel("Cases")
 fig = plt.figure(1)
 fig2 = plt.figure(2)
 
-#plt.show()
+plt.show()
 fig2.savefig("graph.png")
+fig.savefig("graph2.png")
 
 
 html_str = mpld3.fig_to_html(fig2)
