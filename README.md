@@ -18,6 +18,7 @@ pip3 install matplotlib
 
 ## Example
 ![Screenshot](graph.png)
+![Screenshot](graph2.png)
 
 ## Tools
 * Python3
