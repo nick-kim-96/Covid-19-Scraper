@@ -3,8 +3,8 @@ import glob, os, json
 import matplotlib.pyplot as plt
 import mpld3
 
-df = pd.DataFrame()
-df1 = pd.DataFrame()
+df = pd.DataFrame() #Main Dataframe
+df1 = pd.DataFrame() #Secondary Dataframe UNUSED
 path_to_json = 'json/'
 json_pattern = os.path.join(path_to_json, '*.json')
 file_list = glob.glob(json_pattern)
