@@ -11,7 +11,7 @@ file_list = glob.glob(json_pattern)
 
 
 
-for file in sorted(file_list):
+for file in sorted(file_list): #Reading multiple files
     data = pd.read_json(file, lines=True)
     df = df.append({'date': list(data['date']), 'total': int(data['total'])}, ignore_index=True)
     df1['City'] = list(data['cities'][0])
@@ -22,13 +22,13 @@ newList = list(newList[0])
 
 df1['Cases'] = newList
 
-ax1 = df1.plot(x='City', y='Cases', kind = 'bar', figsize=(18,5), fontsize=8)
+ax1 = df1.plot(x='City', y='Cases', kind = 'bar', figsize=(18,5), fontsize=8) #First Grapg
 ax1.set_xlabel("City")
 ax1.set_ylabel("Cases")
 ax1.set_xticks(ax1.get_xticks()[::1])
 
 
-df['date'] = str(df['date'][0])
+df['date'] = str(df['date'][0]) #Second Graph
 df['date'] =  df['date'].str.slice(11,22)
 pd.set_option('display.width', 200)
 print(df['date'])
