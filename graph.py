@@ -44,7 +44,7 @@ fig2.savefig("graph.png")
 fig.savefig("graph2.png")
 
 
-html_str = mpld3.fig_to_html(fig2)
+html_str = mpld3.fig_to_html(fig2) #Writing to html file using library
 html_file = open("index.html","w")
 html_file.write(html_str)
 html_str = mpld3.fig_to_html(fig)
